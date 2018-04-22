@@ -32,11 +32,11 @@ yout = X*B; %saida pela regressao multipla
 plot3(x1,x2,y,'k.'); %plota as entradas x1 e x2 para as saidas y da base
 hold on; %mantem o grafico
 grid on; %habilita as linhas de grade
-plot3(x1,x2,yout,'r'); %plota as entradas x1 e x2 para a saida obtida por regressao
+plot3(x1,x2,yout,'r'); scatter3(x1,x2,yout);%plota as entradas x1 e x2 para a saida obtida por regressao
 xlabel('X1'); %eixo x1
 ylabel('X2'); %eixo x2
-zlabel('Yout'); %eixo yout
-%legend('Saidas da Base', 'Saida da Regressao Multipla', 'nl')
+zlabel('Y'); %eixo yout
+legend('Saidas da Base', 'Saida da Regressao Multipla')
 
 %cálculo de R^2
 r = R(y,yout); %r recebe o coeficiente de determinação

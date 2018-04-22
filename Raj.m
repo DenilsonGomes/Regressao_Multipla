@@ -17,14 +17,14 @@ for k = 1:tamanho
    SQe = SQe + (Y(k) - Yout(k))^2; %soma para calcular a somatorio dos
    %quadrados das diferenças de y e yout
 end   
-%num vale a soma dos quadrados das diferenças entre y e yout
+%SQe vale a soma dos quadrados das diferenças entre y e yout
 
 Syy=0;
 for w = 1:tamanho
    Syy = Syy + (Y(w) - ymed)^2; %soma para calcular a soma dos quadrados 
    %das diferenças entre y e ymed
 end   
-%den vale a soma dos quadrados das diferenças entre y e ymed
+%Syy vale a soma dos quadrados das diferenças entre y e ymed
 
 coef =  1 - (SQe/(tamanho - grau + 1))/(Syy/(tamanho - 1)); %coef vale o 
 %coeficiente de determinação ajustado
