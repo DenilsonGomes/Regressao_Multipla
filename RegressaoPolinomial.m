@@ -9,7 +9,7 @@ clc %limpa o visor
 %clf %limpa as figuras
 
 %recebe o grau do polinomio a ser gerado
-grau = input('Digite o grau do polinômio: ');
+grau = input('Digite o grau do polinômio (entre 2 e 6): ');
 
 load aerogerador.dat %carrega o arquivo
 
@@ -18,7 +18,7 @@ y = aerogerador(:,2); %y recebe a coluna da variavel dependente
 
 [tamanho,~] = size(x); %recebe o tamanho de entradas
 
-%poli é a matriz dos polinomio
+%X é a matriz dos polinomio
 X(:,1) = ones(tamanho,1); %para cada entrada atribuimos o valor 1
 %na primeira coluna
 
@@ -45,17 +45,17 @@ hold on; %mantem o grafico x vs y
 plot(x,yout,'r'); %plota as entradas x e o polinomio obtido por regressao
 ylabel('Potência gerada (KW)'); %titulo eixo vertical
 xlabel('Velocidade do vento (m/s)'); %titulo eixo horizontal
-legend('Saidas do arquivo', 'Polinomio obtido por regressao', 'tl')
+%legend('Saidas do arquivo', 'Polinomio obtido por regressao', 'tl')
 
 %cálculo de R^2 e R^2ajustado
-r1 = R(y,yout); %RA recebe o coeficiente de determinação
-r2 = Raj(y,yout,X); %RB recebe o coeficiente ajustado
-em = erroMedio(y,yout);
+r1 = R(y,yout); %r1 recebe o coeficiente de determinação
+r2 = Raj(y,yout,X); %r2 recebe o coeficiente ajustado
+em = erroMedio(y,yout); %em recebe o erro medio
 
 str = ['Coeficiente de Determinação R^2: ' num2str(r1)];
-disp(str); %exibe a mensagem acima com o valor de RA
+disp(str); %exibe a mensagem acima com o valor de r1
 
 str = ['Coeficiente de Determinação r^2 Ajustado: ' num2str(r2)];
-disp(str); %exibe a mensagem acima com o valor de RB
-str = ['Alcançando um erro medio de : ' num2str(em)];
-disp(str); %exibe a mensagem acima com o valor de EM
+disp(str); %exibe a mensagem acima com o valor de r2
+str = ['Erro medio: ' num2str(em)];
+disp(str); %exibe a mensagem acima com o valor de em
