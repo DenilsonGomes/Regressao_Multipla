@@ -39,10 +39,10 @@ zlabel('Yout'); %eixo yout
 %legend('Saidas da Base', 'Saida da Regressao Multipla', 'nl')
 
 %cálculo de R^2
-r = R(y,yout); %RA recebe o coeficiente de determinação
-EM = erroMedio(y,yout);
+r = R(y,yout); %r recebe o coeficiente de determinação
+EM = erroMedio(y,yout); %EM recebe o erro medio
 
 str = ['Coeficiente de Determinação R^2: ' num2str(r)];
-disp(str); %exibe a mensagem acima com o valor de RA
-str = ['Alcançando um erro medio de : ' num2str(EM)];
+disp(str); %exibe a mensagem acima com o valor de r
+str = ['Erro Medio: ' num2str(EM)];
 disp(str); %exibe a mensagem acima com o valor de EM

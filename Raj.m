@@ -26,5 +26,5 @@ for w = 1:tamanho
 end   
 %den vale a soma dos quadrados das diferenças entre y e ymed
 
-coef =  1 - (SQe/(tamanho - grau + 1))/(Syy/(tamanho - 1)); %coef vale o coeficiente
-%de determinação ajustado
+coef =  1 - (SQe/(tamanho - grau + 1))/(Syy/(tamanho - 1)); %coef vale o 
+%coeficiente de determinação ajustado
