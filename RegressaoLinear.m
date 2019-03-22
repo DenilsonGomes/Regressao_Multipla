@@ -5,6 +5,7 @@
 
 clear %limpa as variaveis
 clc %limpa o visor
+close all %fecha todas as figuras
 
 %base de dados D
 D =[122 139 0.115;
@@ -23,8 +24,9 @@ x2 = D(:,2); %variavel independente x2
 y = D(:,3); %variavel dependente y
 
 %matriz X
-X(:,1) = x1; 
-X(:,2) = x2;
+X(:,1) = ones(length(x1),1); 
+X(:,2) = x1;
+X(:,3) = x2;
 
 B = ((X'*X)^(-1))*X'*y; %B contem as constantes
 yout = X*B; %saida pela regressao multipla
